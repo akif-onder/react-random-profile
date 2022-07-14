@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css';
 
 
 const Accordion = ({ title, answer }) => {
@@ -8,7 +9,7 @@ const Accordion = ({ title, answer }) => {
     <div className="container">
       <div className="questionContainer" >
         <p>{title}</p>
-        <div onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Close" : "Open"}</div>
+        <div className={isOpen ? "close" : "open"} onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Close" : "Open"}</div>
       </div>
       {isOpen && <div className="answer">{answer}</div>}
     </div>
